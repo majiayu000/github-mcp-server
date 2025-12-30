@@ -44,8 +44,9 @@ func GetMe(t translations.TranslationHelperFunc) inventory.ServerTool {
 			Name:        "get_me",
 			Description: t("TOOL_GET_ME_DESCRIPTION", "Get details of the authenticated GitHub user. Use this when a request is about the user's own profile for GitHub. Or when information is missing to build other tool calls."),
 			Annotations: &mcp.ToolAnnotations{
-				Title:        t("TOOL_GET_ME_USER_TITLE", "Get my user profile"),
-				ReadOnlyHint: true,
+				Title:         t("TOOL_GET_ME_USER_TITLE", "Get my user profile"),
+				ReadOnlyHint:  true,
+				OpenWorldHint: jsonschema.Ptr(true),
 			},
 			// Use json.RawMessage to ensure "properties" is included even when empty.
 			// OpenAI strict mode requires the properties field to be present.

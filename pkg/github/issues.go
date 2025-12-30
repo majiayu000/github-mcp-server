@@ -269,8 +269,9 @@ Options are:
 			Name:        "issue_read",
 			Description: t("TOOL_ISSUE_READ_DESCRIPTION", "Get information about a specific issue in a GitHub repository."),
 			Annotations: &mcp.ToolAnnotations{
-				Title:        t("TOOL_ISSUE_READ_USER_TITLE", "Get issue details"),
-				ReadOnlyHint: true,
+				Title:         t("TOOL_ISSUE_READ_USER_TITLE", "Get issue details"),
+				ReadOnlyHint:  true,
+				OpenWorldHint: jsonschema.Ptr(true),
 			},
 			InputSchema: schema,
 		},
@@ -551,8 +552,9 @@ func ListIssueTypes(t translations.TranslationHelperFunc) inventory.ServerTool {
 			Name:        "list_issue_types",
 			Description: t("TOOL_LIST_ISSUE_TYPES_FOR_ORG", "List supported issue types for repository owner (organization)."),
 			Annotations: &mcp.ToolAnnotations{
-				Title:        t("TOOL_LIST_ISSUE_TYPES_USER_TITLE", "List available issue types"),
-				ReadOnlyHint: true,
+				Title:         t("TOOL_LIST_ISSUE_TYPES_USER_TITLE", "List available issue types"),
+				ReadOnlyHint:  true,
+				OpenWorldHint: jsonschema.Ptr(true),
 			},
 			InputSchema: &jsonschema.Schema{
 				Type: "object",
